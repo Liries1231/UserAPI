@@ -18,4 +18,3 @@ public class UserPass {
     private String password;
 }
 
-

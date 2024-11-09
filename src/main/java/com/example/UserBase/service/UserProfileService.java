@@ -2,18 +2,18 @@ package com.example.UserBase.service;
 
 import com.example.UserBase.entity.UserProfile;
 import com.example.UserBase.repos.UserProfRepos;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+@AllArgsConstructor
 @Service
 public class UserProfileService {
-    @Autowired
-    private UserProfRepos userProfileRepository;
+
+    private final UserProfRepos userProfileRepository;
     public Optional<UserProfile> getUserProfile(Long id) {
         return userProfileRepository.findById(id);
     }
-
 
 
 

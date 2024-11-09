@@ -18,5 +18,4 @@ public class UserPassController {
     public UserPass createUser(@RequestBody UserPass userPass) {
         return userService.createUser(userPass);
     }
-
 }
