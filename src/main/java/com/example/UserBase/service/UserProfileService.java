@@ -3,6 +3,9 @@ package com.example.UserBase.service;
 import com.example.UserBase.entity.UserProfile;
 import com.example.UserBase.repos.UserProfRepos;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -13,6 +16,11 @@ public class UserProfileService {
     private final UserProfRepos userProfileRepository;
     public Optional<UserProfile> getUserProfile(Long id) {
         return userProfileRepository.findById(id);
+    }
+    public Page<UserProfile> getUsers (int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return userProfileRepository.findAll(pageable);
+
     }
 
 

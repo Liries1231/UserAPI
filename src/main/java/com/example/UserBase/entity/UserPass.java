@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "userPass")
 public class UserPass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

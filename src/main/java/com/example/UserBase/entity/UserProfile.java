@@ -11,7 +11,6 @@ import java.time.Instant;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "userProfile")
 public class UserProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
