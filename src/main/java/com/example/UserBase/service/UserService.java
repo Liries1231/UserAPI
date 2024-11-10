@@ -5,6 +5,7 @@ import com.example.UserBase.entity.UserPass;
 import com.example.UserBase.entity.UserProfile;
 import com.example.UserBase.repos.UserRepository;
 import lombok.AllArgsConstructor;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -20,6 +21,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     private final UserProfileService userProfileService;
+
 
     public UserPass createUser(UserPass user) {
         return userRepository.save(user);
@@ -41,9 +43,12 @@ public class UserService {
     }
 
     public UserProfile createUserWithProfile(UserCreationDto userCreationDto) {
+        String hashedPassword = BCrypt.hashpw(userCreationDto.getPassword(), BCrypt.gensalt());
+
+
         UserPass userPass = new UserPass();
         userPass.setLogin(userCreationDto.getLogin());
-        userPass.setPassword(userCreationDto.getPassword());
+        userPass.setPassword(hashedPassword);
         UserPass userSaved = userRepository.save(userPass);
 
 

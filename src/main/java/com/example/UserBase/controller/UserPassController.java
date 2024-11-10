@@ -22,3 +22,4 @@ public class UserPassController {
         return userService.createUser(userPass);
     }
 }
+
