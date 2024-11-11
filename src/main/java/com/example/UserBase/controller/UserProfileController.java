@@ -29,6 +29,7 @@ public class UserProfileController {
         return userProfileService.createUserProfile(userProfile);
     }
 
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUserProfile(@PathVariable Long id) {
         userProfileService.deleteUserProfile(id);

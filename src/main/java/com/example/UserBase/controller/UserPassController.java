@@ -3,6 +3,7 @@ package com.example.UserBase.controller;
 import com.example.UserBase.entity.UserPass;
 import com.example.UserBase.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
@@ -20,6 +21,11 @@ public class UserPassController {
     @PostMapping
     public UserPass createUser(@RequestBody UserPass userPass) {
         return userService.createUser(userPass);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUserProfile(@PathVariable Long id) {
+        userService.deleteById(id);
+        return ResponseEntity.ok("deleted");
     }
 }
 

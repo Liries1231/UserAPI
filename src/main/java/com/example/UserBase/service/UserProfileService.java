@@ -8,6 +8,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @AllArgsConstructor
@@ -34,7 +37,8 @@ public class UserProfileService {
     public UserProfile updateUserProfile(Long id, UserProfile updateUser) {
         UserProfile existingProfile = userProfileRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("UserProfile not found with id " + id));
-        existingProfile.setBirthYear(updateUser.getBirthYear());
+
+        
         existingProfile.setAbout(updateUser.getAbout());
         existingProfile.setUser(updateUser.getUser());
 
