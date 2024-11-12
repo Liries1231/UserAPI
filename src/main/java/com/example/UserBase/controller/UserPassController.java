@@ -19,6 +19,7 @@ public class UserPassController {
         return userService.getUserId(id);
     }
 
+
     @PostMapping
     public UserPass createUser(@RequestBody UserPass userPass) {
         return userService.createUser(userPass);

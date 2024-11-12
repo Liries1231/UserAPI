@@ -17,7 +17,6 @@ import java.time.format.DateTimeFormatter;
 @Service
 public class UserService {
 
-
     private final UserRepository userRepository;
 
     private final UserProfileService userProfileService;

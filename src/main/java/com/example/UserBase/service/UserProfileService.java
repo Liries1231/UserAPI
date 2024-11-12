@@ -31,6 +31,7 @@ public class UserProfileService {
 
     }
 
+
     public void deleteUserProfile(Long id) {
         userProfileRepository.deleteById(id);
     }
