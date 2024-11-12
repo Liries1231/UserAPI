@@ -51,7 +51,6 @@ public class UserService {
         userPass.setPassword(hashedPassword);
         UserPass userSaved = userRepository.save(userPass);
 
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime localDateTime = LocalDateTime.parse(userCreationDto.getBirthYear(), formatter);
         Instant birthYearInstant = localDateTime.toInstant(ZoneOffset.UTC);

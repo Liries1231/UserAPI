@@ -26,6 +26,7 @@ public class RegisterController {
                 = userService.createUserWithProfile(userCreationDto);
         return ResponseEntity.ok(userProfile);
     }
+
 }
 
 
