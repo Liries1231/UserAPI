@@ -14,3 +14,4 @@ public class UserCreationDto {
     private String birthYear;
     private String about;
 }
+
